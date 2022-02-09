@@ -9,13 +9,12 @@
 
 using namespace std;
 
-template <class T>
-T difference(T object1, T object2)
-{
+template<class T>
+T difference(T object1, T object2) {
     return object1 - object2;
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     int isShut = 0;
     while (!isShut) {
         Menu options;
@@ -41,9 +40,8 @@ int main(int argc, char* argv[]) {
                                     cal->display();
                                 } else
                                     cout << "Rok nie może być ujemny!\n";
-
-                            }
                                 break;
+                            }
                             case 2: {
                                 int month, year;
                                 cout << "Podaj rok: ";
@@ -62,9 +60,8 @@ int main(int argc, char* argv[]) {
                                     cout << "\n\n";
                                 } else
                                     cout << "Rok nie może być ujemny!\n";
-
-                            }
                                 break;
+                            }
                             default:
                                 cout << "Zly argument. Podaj 1 lub 2.\n";
                         }
@@ -73,12 +70,9 @@ int main(int argc, char* argv[]) {
                         cerr << "Error: " << e.what() << "\n";
                         exit(EXIT_FAILURE);
                     }
-                    catch(char *e) {
-                        cerr << "Error: " << e << "\n";
-                    }
                 }
                 break;
-                case 2:{
+                case 2: {
                     Menu vecMenu;
                     try {
                         int day1, day2;
@@ -87,26 +81,23 @@ int main(int argc, char* argv[]) {
                         if (cin.fail()) {
                             throw "cin";
                         }
-                        cout << "Podaj wczesniejszy dzien roku: ";
+                        cout << "Podaj inny dzien roku: ";
                         cin >> day2;
                         if (cin.fail()) {
                             throw "cin";
                         }
                         if (day1 > 0 && day2 > 0 && day1 < 365 && day2 < 365) {
                             cout << "Roznica wynosi: " << fabs(difference<int>(day1, day2)) << "\n";
-                        }
-                        else {
+                        } else {
                             cout << "Error. Zly dzien.\n";
                         }
                     }
-                    catch(exception &e) {
+                    catch (exception &e) {
                         cout << "Error: " << e.what() << "\n";
                         exit(EXIT_FAILURE);
                     }
                 }
                 break;
-                case 3:
-                    break;
                 default:
                     cout << "Error. Zla opcja.\n";
             }

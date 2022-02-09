@@ -2,11 +2,16 @@
 #include "../include/kalendarz.h"
 
 using namespace std;
+
 Calendar::Calendar() {
     cout << "Konstruktor Calendar\n";
 }
 
 bool Calendar::isLeap(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+}
+
+bool Calendar::isLeap(long year) {
     return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 }
 
@@ -17,8 +22,7 @@ int Calendar::dayMax(int month, int year) {
 int Calendar::weekday_int(int day, int month, int year) {
     if (month > 2) {
         month -= 2;
-    }
-    else {
+    } else {
         month += 10;
         year--;
     }
@@ -44,8 +48,7 @@ void Calendar::monthToFile(int month, int year) {
         }
         file << "\n\n";
         file.close();
-    }
-    else {
+    } else {
         cout << "Error: plik\n";
     }
 }
@@ -53,7 +56,7 @@ void Calendar::monthToFile(int month, int year) {
 void Calendar::display() {
     file.open("dane.txt", ios::in);
     int ch;
-    while((ch = file.get()) != EOF) {
+    while ((ch = file.get()) != EOF) {
         cout.put(char(ch));
     }
     file.close();

@@ -36,9 +36,9 @@ int main(int argc, char* argv[]) {
                                 }
                                 if (year > 0) {
                                     for (int i = 1; i <= 12; ++i) {
-                                        cal->displayMonth(i, year);
-                                        cout << "\n\n";
+                                        cal->monthToFile(i, year);
                                     }
+                                    cal->display();
                                 } else
                                     cout << "Rok nie może być ujemny!\n";
 
@@ -57,7 +57,8 @@ int main(int argc, char* argv[]) {
                                     throw "cin";
                                 }
                                 if (year > 0 && (month > 0 && month < 13)) {
-                                    cal->displayMonth(month, year);
+                                    cal->monthToFile(month, year);
+                                    cal->display();
                                     cout << "\n\n";
                                 } else
                                     cout << "Rok nie może być ujemny!\n";

@@ -1,14 +1,16 @@
+
 #ifndef CALENDAR_BASE_H
 #define CALENDAR_BASE_H
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Base {
 protected:
     int numberOfDays[2][13] = {{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
-    string Month[13] = {"", "Styczen", "Luty", "Marzec", "Kwiecien", "Maj", "Czerwiec", "Lipiec", "Sierpien", "Wrzesien", "Pazdziernik", "Listopad", "Grudzien"};
+    vector <string> monthVec;
     int month;
     int year;
 public:

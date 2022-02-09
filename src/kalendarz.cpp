@@ -1,3 +1,4 @@
+
 #include "../include/kalendarz.h"
 
 using namespace std;
@@ -27,7 +28,7 @@ int Calendar::weekday_int(int day, int month, int year) {
 }
 
 void Calendar::displayMonth(int month, int year) {
-    cout << setw((17 - Month[month].length()) / 2) << "" << Month[month] << setw(5)
+    cout << setw((17 - monthVec[month].length()) / 2) << "" << monthVec[month] << setw(5)
          << year << "\n --------------------\n Nd Pn Wt Sr Cz Pt Sb\n";
     int weekday = weekday_int(1, month, year), max = dayMax(month, year);
     if (weekday > 0)

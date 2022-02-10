@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
         cout << "Czy chcesz zamknac program? (0 - nie) ";
         cin >> isShut;
         if (cin.fail()) {
-            cout << "Dam Ci kopa w pupe!\n";
+            cout << "Error: cin\n";
             exit(EXIT_FAILURE);
         }
     }
